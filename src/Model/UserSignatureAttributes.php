@@ -1,8 +1,8 @@
 <?php
+
 namespace XEngine\Signature\Model;
 
 use Flarum\Api\Event\Serializing;
-use Flarum\Api\Serializer\UserSerializer;
 use Flarum\Event\PrepareApiAttributes;
 use Flarum\Event\UserWillBeSaved;
 use Illuminate\Contracts\Events\Dispatcher;
@@ -16,18 +16,7 @@ class UserSignatureAttributes
      */
     public function subscribe(Dispatcher $events)
     {
-        $events->listen(Serializing::class, [$this, 'addApiAttributes']);
         $events->listen(Saving::class, [$this, 'whenUserWillBeSaved']);
-    }
-
-    /**
-     * @param PrepareApiAttributes $event
-     */
-    public function addApiAttributes(Serializing $event)
-    {
-        if ($event->isSerializer(UserSerializer::class)) {
-            $event->attributes['signature'] = $event->model->signature;
-        }
     }
 
     /**

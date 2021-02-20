@@ -1,5 +1,5 @@
 {
-    "name": "cxsquared/signature",
+    "name": "kyrne/signature",
     "description": "Adds signature support to your Flarum forum.",
     "authors": [
         {
@@ -8,18 +8,22 @@
         },
         {
             "name": "Katos",
-            "email": "Katos@creatorswave.com"            
+            "email": "Katos@creatorswave.com"
         },
         {
             "name": "Cxsquared",
-            "email": "cxsquared@gmail.com"            
+            "email": "cxsquared@gmail.com"
+        },
+        {
+            "name": "Charlie K",
+            "email": "kyrne@flarum.org"
         }
     ],
     "type": "flarum-extension",
     "require": {
-        "flarum/core": ">=0.1.0-beta.14 <0.1.0-beta.15",
-        "symfony/dom-crawler":"^3.1",
-        "symfony/css-selector":"^3.1",
+        "flarum/core": "^0.1.0-beta.15",
+        "symfony/dom-crawler":"^5.1",
+        "symfony/css-selector":"^5.1",
         "fof/components": "^0.2.0"
     },
     "autoload": {
@@ -30,6 +34,7 @@
     "extra": {
         "flarum-extension": {
             "title": "Signature",
+            "category": "feature",
             "icon" : {
                 "name" : "fas fa-pen-square",
                 "backgroundColor" : "#000",
